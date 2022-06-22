@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListView.Views.EditPage"
+             xmlns:xx="clr-namespace:ListView.ViewModels"
+             Title="{Binding Model}"
+             
+             >
+    <ContentPage.BindingContext>
+        <xx:EditPageViewModel>
+
+        </xx:EditPageViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="MidnightBlue">
+            <ScrollView>
+                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="Blue">
+                    <Image BackgroundColor="CornflowerBlue" Source="{Binding ImgSource}" WidthRequest="200" HeightRequest="200"></Image>
+                    <StackLayout Orientation="Horizontal" Margin="10">
+                    <Label Text="ImageUrl" HorizontalOptions="Start" VerticalOptions="Center"></Label>
+                    <Entry Text="{Binding ImageUrl}" HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Entry>
+                    </StackLayout>
+                    <Entry Text="{Binding Brand}" HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Entry>
+                    <Entry Text="{Binding Model}" HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Entry>
+                    <Entry Text="{Binding Year}" HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Entry>
+                    <Editor Text="{Binding Details}" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="100"></Editor>
+                </StackLayout>
+            </ScrollView>
+            <Button VerticalOptions="End" HorizontalOptions="FillAndExpand" Text="Kaydet" Command="{Binding SaveCommand}"> 
+                
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

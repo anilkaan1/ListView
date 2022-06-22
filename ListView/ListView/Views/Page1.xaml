@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListView.Views.Page1"
+             Title="Page1 Title">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Placeholder="Topic" x:Name="Topic"></Entry>
+            <Entry Placeholder="Content" x:Name="Content"></Entry>
+
+            <Button Text="Send" Clicked="Button_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

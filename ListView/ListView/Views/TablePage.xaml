@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListView.Views.TablePage"
+             xmlns:vm="clr-namespace:ListView.ViewModels">
+    <ContentPage.BindingContext>
+        <vm:TablePageViewModel>
+            
+        </vm:TablePageViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <AbsoluteLayout>
+        <ScrollView VerticalScrollBarVisibility="Never" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Source="House1" Aspect="AspectFill" HeightRequest="350"></Image>
+                
+                <Button Grid.Row="0" Grid.Column="1" BackgroundColor="DarkGreen" ImageSource="Heart" BorderColor="White" BorderWidth="2" CornerRadius="27"
+                        Margin="0,10,10,0" WidthRequest="70" HeightRequest="70" HorizontalOptions="End" VerticalOptions="Start"></Button>
+
+                <Label Grid.Row="1" Grid.Column="0" Text="$200,000" FontAttributes="Bold" FontSize="30" VerticalOptions="Start" Margin="20,10,20,5"></Label>
+                
+                <Label Grid.Row="2" Grid.Column="0" Text="Izmir/Goztepe 88. Sok. No:29" TextColor="Silver" FontSize="15" VerticalOptions="Start" Padding="20,0"></Label>
+
+                <Button Grid.Row="1" Grid.Column="1" Grid.RowSpan="2"   BorderColor="Black" BorderWidth="1" FontSize="15" CornerRadius="20" Margin="20,10,30,5" 
+                        Text="20 Hours Ago" IsEnabled="False" WidthRequest="150" HeightRequest="40" VerticalOptions="Center" HorizontalOptions="End" ></Button>
+
+                <Label Grid.Row="3" Grid.Column="0" Text="Attributes" FontAttributes="Bold" FontSize="18" Padding="20,40,0,0" VerticalOptions="Start" HorizontalOptions="Start"></Label>
+
+                <CollectionView Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,10" HeightRequest="110" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" HorizontalScrollBarVisibility="Never"
+                                ItemsLayout="HorizontalList" ItemsSource="{Binding Attributes}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="15,0" RowDefinitions="*,Auto" ColumnDefinitions="Auto">
+                                <Button Grid.Row="0" Grid.Column="0" Text="{Binding quantity}" BackgroundColor="Transparent" BorderColor="Silver" BorderWidth="2" CornerRadius="23"
+                                      WidthRequest="10"></Button>
+                                <Label Grid.Row="1" Grid.Column="0" Text="{Binding name}" WidthRequest="70" HorizontalTextAlignment="Center"></Label>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <Label Grid.Row="5" Grid.ColumnSpan="2" TextColor="Silver" FontSize="15" Padding="20,20,20,100" VerticalOptions="Start" Text="Houses may have doors or locks to secure the dwelling space and protect its inhabitants and contents from burglars or other trespassers. &#10;&#10;Most conventional modern houses in Western cultures will contain one or more bedrooms and bathrooms, a kitchen or cooking area, and a living room.Houses may have doors or locks to secure the dwelling space and protect its inhabitants and contents from burglars or other trespassers. Most conventional modern houses in Western cultures will contain one or more bedrooms and bathrooms, a kitchen or cooking area, and a living room.&#10;&#10;Houses may have doors or locks to secure the dwelling space and protect its inhabitants and contents from burglars or other trespassers. Most conventional modern houses in Western cultures will contain one or more bedrooms and bathrooms, a kitchen or cooking area, and a living room."></Label>
+            </Grid> 
+
+            
+        </ScrollView>
+            <StackLayout Orientation="Horizontal" Padding="0,0,0,22"  VerticalOptions="End" HorizontalOptions="CenterAndExpand" AbsoluteLayout.LayoutFlags="All" HeightRequest="60" AbsoluteLayout.LayoutBounds="0,1,1,0.1" >
+                <Button BackgroundColor="Black" CornerRadius="25" TextColor="White" ImageSource="Message" FontAttributes="Bold" Text="Message" WidthRequest="150"></Button>
+                <Button BackgroundColor="Black" CornerRadius="25" TextColor="White" ImageSource="Call" FontAttributes="Bold" Text="Call" WidthRequest="150"></Button>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
